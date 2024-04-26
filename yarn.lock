@@ -1329,7 +1329,7 @@
   resolved "http://npm.cestc.cn/@udecode/plate-horizontal-rule/download/@udecode/plate-horizontal-rule-30.5.3.tgz#5b7bffc02e6c00f6b3064db22fa806ae05e16bf7"
   integrity sha1-W3v/wC5sAPazBk2yL6gGrgXha/c=
 
-"@udecode/plate-indent-list@30.5.3", "@udecode/plate-indent-list@^30.1.2":
+"@udecode/plate-indent-list@30.5.3":
   version "30.5.3"
   resolved "http://npm.cestc.cn/@udecode/plate-indent-list/download/@udecode/plate-indent-list-30.5.3.tgz#c2c0555d51dcb4c28bd737f775195a275e3d20b2"
   integrity sha1-wsBVXVHctMKL1zf3dRlaJ149ILI=
@@ -1338,10 +1338,24 @@
     "@udecode/plate-list" "30.5.3"
     clsx "^1.2.1"
 
+"@udecode/plate-indent-list@^31.4.3":
+  version "31.4.3"
+  resolved "http://npm.cestc.cn/@udecode/plate-indent-list/download/@udecode/plate-indent-list-31.4.3.tgz#d15b7fcf3ff753eaa9c4f9941e4c13dfb3f33deb"
+  integrity sha1-0Vt/zz/3U+qpxPmUHkwT37PzPes=
+  dependencies:
+    "@udecode/plate-indent" "31.1.0"
+    "@udecode/plate-list" "31.1.3"
+    clsx "^1.2.1"
+
 "@udecode/plate-indent@30.5.3", "@udecode/plate-indent@^30.1.2":
   version "30.5.3"
   resolved "http://npm.cestc.cn/@udecode/plate-indent/download/@udecode/plate-indent-30.5.3.tgz#abbe8ec31132380ba6984e81b1195b02bd1b5b27"
   integrity sha1-q76OwxEyOAummE6BsRlbAr0bWyc=
+
+"@udecode/plate-indent@31.1.0":
+  version "31.1.0"
+  resolved "http://npm.cestc.cn/@udecode/plate-indent/download/@udecode/plate-indent-31.1.0.tgz#e27ee7cbc40f547b6e4032a2ff019424a5f66dcd"
+  integrity sha1-4n7ny8QPVHtuQDKi/wGUJKX2bc0=
 
 "@udecode/plate-juice@^30.1.2":
   version "30.5.3"
@@ -1374,6 +1388,14 @@
   integrity sha1-+U55lTK8jfJHES3NVqX9jBRgz2U=
   dependencies:
     "@udecode/plate-reset-node" "30.5.3"
+    lodash "^4.17.21"
+
+"@udecode/plate-list@31.1.3":
+  version "31.1.3"
+  resolved "http://npm.cestc.cn/@udecode/plate-list/download/@udecode/plate-list-31.1.3.tgz#952b3d2b24d72c2fdefa18405f808a2021660e29"
+  integrity sha1-lSs9KyTXLC/e+hhAX4CKICFmDik=
+  dependencies:
+    "@udecode/plate-reset-node" "31.0.0"
     lodash "^4.17.21"
 
 "@udecode/plate-media@30.5.3", "@udecode/plate-media@^30.1.2":
@@ -1413,6 +1435,11 @@
   version "30.5.3"
   resolved "http://npm.cestc.cn/@udecode/plate-reset-node/download/@udecode/plate-reset-node-30.5.3.tgz#f89c8cef905697d078375cb74f068f594b50d0fd"
   integrity sha1-+JyM75BWl9B4N1y3TwaPWUtQ0P0=
+
+"@udecode/plate-reset-node@31.0.0":
+  version "31.0.0"
+  resolved "http://npm.cestc.cn/@udecode/plate-reset-node/download/@udecode/plate-reset-node-31.0.0.tgz#da30f64ad9366539de221bd464989d10eae4c8f0"
+  integrity sha1-2jD2Stk2ZTneIhvUZJidEOrkyPA=
 
 "@udecode/plate-resizable@30.5.3", "@udecode/plate-resizable@^30.1.2":
   version "30.5.3"

@@ -93,7 +93,7 @@ import {
   createTodoListPlugin,
   ELEMENT_LI,
   ELEMENT_OL,
-  ELEMENT_TODO_LI,
+  // ELEMENT_TODO_LI,
   ELEMENT_UL,
 } from '@udecode/plate-list';
 import {
@@ -144,6 +144,10 @@ import { ImageElement } from '@/components/plate-ui/image-element';
 import { LinkElement } from '@/components/plate-ui/link-element';
 import { LinkFloatingToolbar } from '@/components/plate-ui/link-floating-toolbar';
 import { ListElement } from '@/components/plate-ui/list-element';
+import {
+  TodoLi,
+  TodoMarker,
+} from '@/components/plate-ui/indent-todo-marker-component';
 import { MediaEmbedElement } from '@/components/plate-ui/media-embed-element';
 // import { MentionElement } from '@/components/plate-ui/mention-element';
 // import { MentionInputElement } from '@/components/plate-ui/mention-input-element';
@@ -155,11 +159,10 @@ import {
 } from '@/components/plate-ui/table-cell-element';
 import { TableElement } from '@/components/plate-ui/table-element';
 import { TableRowElement } from '@/components/plate-ui/table-row-element';
-import { TodoListElement } from '@/components/plate-ui/todo-list-element';
 import { withDraggables } from '@/components/plate-ui/with-draggables';
 
 const resetBlockTypesCommonRule = {
-  types: [ELEMENT_BLOCKQUOTE, ELEMENT_TODO_LI],
+  types: [ELEMENT_BLOCKQUOTE],
   defaultType: ELEMENT_PARAGRAPH,
 };
 
@@ -251,6 +254,15 @@ export const plugins = createPlugins(
             ELEMENT_BLOCKQUOTE,
             ELEMENT_CODE_BLOCK,
           ],
+        },
+      },
+      options: {
+        listStyleTypes: {
+          todo: {
+            type: 'todo',
+            markerComponent: TodoMarker,
+            liComponent: TodoLi,
+          },
         },
       },
     }),
@@ -401,7 +413,6 @@ export const plugins = createPlugins(
           [ELEMENT_TD]: TableCellElement,
           [ELEMENT_TH]: TableCellHeaderElement,
           [ELEMENT_TR]: TableRowElement,
-          [ELEMENT_TODO_LI]: TodoListElement,
           // [ELEMENT_EXCALIDRAW]: ExcalidrawElement,
           [MARK_BOLD]: withProps(PlateLeaf, { as: 'strong' }),
           [MARK_CODE]: CodeLeaf,

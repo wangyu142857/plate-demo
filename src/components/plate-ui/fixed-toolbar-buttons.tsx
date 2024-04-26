@@ -1,13 +1,10 @@
 import React from 'react';
 import {
   MARK_BOLD,
-  MARK_CODE,
   MARK_ITALIC,
   MARK_UNDERLINE,
 } from '@udecode/plate-basic-marks';
-import {
-  ELEMENT_CODE_BLOCK,
-} from '@udecode/plate-code-block';
+
 import { useEditorReadOnly } from '@udecode/plate-common';
 import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font';
 import { ListStyleType } from '@udecode/plate-indent-list';
@@ -17,6 +14,8 @@ import { Icons, iconVariants } from '@/components/icons';
 import { AlignDropdownMenu } from '@/components/plate-ui/align-dropdown-menu';
 import { ColorDropdownMenu } from '@/components/plate-ui/color-dropdown-menu';
 import { IndentListToolbarButton } from '@/components/plate-ui/indent-list-toolbar-button';
+import { IndentTodoToolbarButton } from '@/components/plate-ui/indent-todo-toolbar-button';
+
 import { IndentToolbarButton } from '@/components/plate-ui/indent-toolbar-button';
 import { LineHeightDropdownMenu } from '@/components/plate-ui/line-height-dropdown-menu';
 import { LinkToolbarButton } from '@/components/plate-ui/link-toolbar-button';
@@ -88,6 +87,7 @@ export function FixedToolbarButtons() {
 
               <IndentListToolbarButton nodeType={ListStyleType.Disc} />
               <IndentListToolbarButton nodeType={ListStyleType.Decimal} />
+              <IndentTodoToolbarButton />
 
               <OutdentToolbarButton />
               <IndentToolbarButton />
