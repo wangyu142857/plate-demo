@@ -1,4 +1,4 @@
-import { HiRichEditor } from './components/HiRichEditor';
+import { PlateEditor } from './components/PlateEditor';
 
 const App = () => {
   const initialValue = [
@@ -32,9 +32,9 @@ const App = () => {
     <div className="content" style={{
       padding: '50px'
     }}>
-      <HiRichEditor initialValue={initialValue} onChange={(val) => {
+      <PlateEditor initialValue={initialValue} onChange={(val) => {
         console.log('Handle onChange: ', val);
-      }}></HiRichEditor>
+      }}></PlateEditor>
     </div>
   );
 };

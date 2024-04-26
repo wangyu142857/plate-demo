@@ -18,9 +18,9 @@ import { FloatingToolbarButtons } from '@/components/plate-ui/floating-toolbar-b
 import { IEditorProps } from '@/type';
 import '../index.css';
 
-export function HiRichEditor(props: IEditorProps) {
+export function PlateEditor(props: IEditorProps) {
   const containerRef = useRef(null);
-  const { initialValue, onChange } = props;
+  const { initialValue, readOnly, onChange } = props;
 
   return (
     <TooltipProvider
@@ -42,9 +42,11 @@ export function HiRichEditor(props: IEditorProps) {
               '[&_.slate-start-area-left]:!w-3 [&_.slate-start-area-right]:!w-3 [&_.slate-start-area-top]:!h-4'
             )}
           >
-            <FixedToolbar>
-              <FixedToolbarButtons />
-            </FixedToolbar>
+            <div className={`${readOnly ? 'toolbar-readOnly' : ''}`}>
+              <FixedToolbar>
+                <FixedToolbarButtons />
+              </FixedToolbar>
+            </div>
 
             <Editor
               autoFocus
