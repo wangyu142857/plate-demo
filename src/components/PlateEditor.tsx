@@ -73,7 +73,7 @@ export const PlateEditor = withHOC(PlateController, (props: IEditorProps) => {
               <div
                 className={`${rest?.disabledToolbar ? 'toolbar-readOnly' : ''}`}
               >
-                <FixedToolbar className="fixed-toolbar">
+                <FixedToolbar>
                   <FixedToolbarButtons />
                 </FixedToolbar>
               </div>
@@ -87,7 +87,7 @@ export const PlateEditor = withHOC(PlateController, (props: IEditorProps) => {
               {...rest}
             />
             {!rest?.readOnly ? (
-              <FloatingToolbar className="float-toolbar">
+              <FloatingToolbar>
                 <FloatingToolbarButtons />
               </FloatingToolbar>
             ) : null}
