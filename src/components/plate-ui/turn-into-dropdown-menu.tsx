@@ -27,7 +27,6 @@ import { Icons } from '@/components/icons';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
@@ -38,50 +37,50 @@ import { ToolbarButton } from './toolbar';
 const items = [
   {
     value: ELEMENT_PARAGRAPH,
-    label: 'Paragraph',
-    description: 'Paragraph',
+    label: '正文',
+    description: '正文',
     icon: Icons.paragraph,
   },
   {
     value: ELEMENT_H1,
-    label: 'Heading 1',
-    description: 'Heading 1',
+    label: '一级标题',
+    description: '一级标题',
     icon: Icons.h1,
   },
   {
     value: ELEMENT_H2,
-    label: 'Heading 2',
-    description: 'Heading 2',
+    label: '二级标题',
+    description: '二级标题',
     icon: Icons.h2,
   },
   {
     value: ELEMENT_H3,
-    label: 'Heading 3',
-    description: 'Heading 3',
+    label: '三级标题',
+    description: '三级标题',
     icon: Icons.h3,
   },
   {
     value: ELEMENT_H4,
-    label: 'Heading 4',
-    description: 'Heading 4',
+    label: '四级标题',
+    description: '四级标题',
     icon: Icons.h4,
   },
   {
     value: ELEMENT_H5,
-    label: 'Heading 5',
-    description: 'Heading 5',
+    label: '五级标题',
+    description: '五级标题',
     icon: Icons.h5,
   },
   {
     value: ELEMENT_H6,
-    label: 'Heading 6',
-    description: 'Heading 6',
+    label: '六级标题',
+    description: '六级标题',
     icon: Icons.h6,
   },
   {
     value: ELEMENT_BLOCKQUOTE,
-    label: 'Quote',
-    description: 'Quote (⌘+⇧+.)',
+    label: '引用',
+    description: '引用 (⌘+⇧+.)',
     icon: Icons.blockquote,
   },
   // {
@@ -130,7 +129,7 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
       <DropdownMenuTrigger asChild>
         <ToolbarButton
           pressed={openState.open}
-          tooltip="Turn into"
+          tooltip="基本格式"
           isDropdown
           className="lg:min-w-[130px]"
         >
@@ -140,8 +139,6 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="start" className="min-w-0">
-        <DropdownMenuLabel>Turn into</DropdownMenuLabel>
-
         <DropdownMenuRadioGroup
           className="flex flex-col gap-0.5"
           value={value}

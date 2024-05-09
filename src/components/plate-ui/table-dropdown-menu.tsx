@@ -42,7 +42,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Table" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="表格" isDropdown>
           <Icons.table />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -54,7 +54,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <Icons.table className={iconVariants({ variant: 'menuItem' })} />
-            <span>Table</span>
+            <span>表格</span>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem
@@ -65,7 +65,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.add className={iconVariants({ variant: 'menuItem' })} />
-              Insert table
+              插入表格
             </DropdownMenuItem>
             <DropdownMenuItem
               className="min-w-[180px]"
@@ -76,7 +76,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.trash className={iconVariants({ variant: 'menuItem' })} />
-              Delete table
+              删除表格
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
@@ -84,7 +84,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={!tableSelected}>
             <Icons.column className={iconVariants({ variant: 'menuItem' })} />
-            <span>Column</span>
+            <span>列</span>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem
@@ -96,7 +96,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.add className={iconVariants({ variant: 'menuItem' })} />
-              Insert column after
+              此后插入列
             </DropdownMenuItem>
             <DropdownMenuItem
               className="min-w-[180px]"
@@ -107,7 +107,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.minus className={iconVariants({ variant: 'menuItem' })} />
-              Delete column
+              删除列
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
@@ -115,7 +115,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger disabled={!tableSelected}>
             <Icons.row className={iconVariants({ variant: 'menuItem' })} />
-            <span>Row</span>
+            <span>行</span>
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuItem
@@ -127,7 +127,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.add className={iconVariants({ variant: 'menuItem' })} />
-              Insert row after
+              此后插入行
             </DropdownMenuItem>
             <DropdownMenuItem
               className="min-w-[180px]"
@@ -138,7 +138,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
               }}
             >
               <Icons.minus className={iconVariants({ variant: 'menuItem' })} />
-              Delete row
+              删除行
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>

@@ -82,7 +82,7 @@ const dragHandle = (
     <TooltipTrigger>
       <Icons.dragHandle className="size-4 text-muted-foreground" />
     </TooltipTrigger>
-    <TooltipContent>Drag to move</TooltipContent>
+    <TooltipContent>拖拽</TooltipContent>
   </Tooltip>
 );
 

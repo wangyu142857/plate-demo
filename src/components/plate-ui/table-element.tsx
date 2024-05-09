@@ -63,28 +63,28 @@ export const TableBordersDropdownMenuContent = withRef<
         onCheckedChange={getOnSelectTableBorder('bottom')}
       >
         <Icons.borderBottom className={iconVariants({ size: 'sm' })} />
-        <div>Bottom Border</div>
+        <div>下边框</div>
       </DropdownMenuCheckboxItem>
       <DropdownMenuCheckboxItem
         checked={hasTopBorder}
         onCheckedChange={getOnSelectTableBorder('top')}
       >
         <Icons.borderTop className={iconVariants({ size: 'sm' })} />
-        <div>Top Border</div>
+        <div>上边框</div>
       </DropdownMenuCheckboxItem>
       <DropdownMenuCheckboxItem
         checked={hasLeftBorder}
         onCheckedChange={getOnSelectTableBorder('left')}
       >
         <Icons.borderLeft className={iconVariants({ size: 'sm' })} />
-        <div>Left Border</div>
+        <div>左边框</div>
       </DropdownMenuCheckboxItem>
       <DropdownMenuCheckboxItem
         checked={hasRightBorder}
         onCheckedChange={getOnSelectTableBorder('right')}
       >
         <Icons.borderRight className={iconVariants({ size: 'sm' })} />
-        <div>Right Border</div>
+        <div>右边框</div>
       </DropdownMenuCheckboxItem>
 
       <Separator />
@@ -94,14 +94,14 @@ export const TableBordersDropdownMenuContent = withRef<
         onCheckedChange={getOnSelectTableBorder('none')}
       >
         <Icons.borderNone className={iconVariants({ size: 'sm' })} />
-        <div>No Border</div>
+        <div>无边框</div>
       </DropdownMenuCheckboxItem>
       <DropdownMenuCheckboxItem
         checked={hasOuterBorders}
         onCheckedChange={getOnSelectTableBorder('outer')}
       >
         <Icons.borderAll className={iconVariants({ size: 'sm' })} />
-        <div>Outside Borders</div>
+        <div>外边框</div>
       </DropdownMenuCheckboxItem>
     </DropdownMenuContent>
   );
@@ -134,7 +134,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
         onClick={() => mergeTableCells(editor)}
       >
         <Icons.combine className="mr-2 size-4" />
-        Merge
+        合并单元格
       </Button>
     );
 
@@ -146,7 +146,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
         onClick={() => unmergeTableCells(editor)}
       >
         <Icons.ungroup className="mr-2 size-4" />
-        Unmerge
+        分割合并的单元格
       </Button>
     );
 
@@ -156,7 +156,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" isMenu>
               <Icons.borderAll className="mr-2 size-4" />
-              Borders
+              边框
             </Button>
           </DropdownMenuTrigger>
 
@@ -167,7 +167,7 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
 
         <Button contentEditable={false} variant="ghost" isMenu {...buttonProps}>
           <Icons.delete className="mr-2 size-4" />
-          Delete
+          删除表格
         </Button>
       </>
     );

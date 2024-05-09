@@ -79,7 +79,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
 
         <FloatingLinkUrlInput
           className={inputVariants({ variant: 'ghost', h: 'sm' })}
-          placeholder="Paste link"
+          placeholder="链接地址"
         />
       </div>
 
@@ -91,7 +91,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         </div>
         <input
           className={inputVariants({ variant: 'ghost', h: 'sm' })}
-          placeholder="Text to display"
+          placeholder="链接文字"
           {...textInputProps}
         />
       </div>
@@ -107,7 +107,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
         className={buttonVariants({ variant: 'ghost', size: 'sm' })}
         {...editButtonProps}
       >
-        Edit link
+        编辑
       </button>
 
       <Separator orientation="vertical" />

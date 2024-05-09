@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   useIndentTodoToolBarButton,
   useIndentTodoToolBarButtonState,
@@ -14,7 +16,7 @@ export const IndentTodoToolbarButton = withRef<typeof ToolbarButton>(
     const { props } = useIndentTodoToolBarButton(state);
 
     return (
-      <ToolbarButton ref={ref} tooltip="Todo" {...props} {...rest}>
+      <ToolbarButton ref={ref} tooltip="任务列表" {...props} {...rest}>
         <Icons.todo />
       </ToolbarButton>
     );

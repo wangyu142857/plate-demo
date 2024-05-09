@@ -15,11 +15,11 @@ export const CodeBlockToolbarButton = withRef<
   {
     nodeType?: typeof ELEMENT_CODE_BLOCK;
   }
->(({ nodeType, ...rest }, ref) => {
+>(({ ...rest }, ref) => {
   const { props } = useToggleCodeBlockButton();
 
   return (
-    <ToolbarButton ref={ref} {...props} {...rest}>
+    <ToolbarButton ref={ref} {...props} {...rest} tooltip="代码块">
       <Icons.code />
     </ToolbarButton>
   );

@@ -22,9 +22,7 @@ export const IndentListToolbarButton = withRef<
   return (
     <ToolbarButton
       ref={ref}
-      tooltip={
-        nodeType === ListStyleType.Disc ? 'Bulleted List' : 'Numbered List'
-      }
+      tooltip={nodeType === ListStyleType.Disc ? '无序列表' : '有序列表'}
       {...props}
     >
       {nodeType === ListStyleType.Disc ? <Icons.ul /> : <Icons.ol />}

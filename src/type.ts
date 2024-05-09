@@ -1,5 +1,9 @@
+import { Value } from '@udecode/plate-common';
 export interface IEditorProps {
-  initialValue?: any;
-  readOnly: boolean;
-  onChange?: (value: any) => void;
+  id?: string;
+  value?: Value;
+  initialValue?: Value;
+  readOnly?: boolean;
+  disabledToolbar?: boolean; // 禁用toolbar
+  onChange?: (value: Value) => void;
 }

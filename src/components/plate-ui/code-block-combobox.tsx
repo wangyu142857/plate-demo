@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { cn } from '@udecode/cn';
+// import { cn } from '@udecode/cn';
 import {
   CODE_BLOCK_LANGUAGES,
   CODE_BLOCK_LANGUAGES_POPULAR,
@@ -12,13 +12,13 @@ import {
 import { Icons } from '@/components/icons';
 
 import { Button } from './button';
-import {
-  Command,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from './command';
+// import {
+//   Command,
+//   CommandEmpty,
+//   CommandInput,
+//   CommandItem,
+//   CommandList,
+// } from './command';
 import { Popover, PopoverContent, PopoverTrigger } from './popover';
 
 const languages: { value: string; label: string }[] = [
@@ -35,6 +35,7 @@ const languages: { value: string; label: string }[] = [
 export function CodeBlockCombobox() {
   const state = useCodeBlockComboboxState();
   const { commandItemProps } = useCodeBlockCombobox(state);
+  console.log('CodeBlockCombobox  commandItemProps:', commandItemProps);
 
   const [open, setOpen] = useState(false);
 
@@ -58,7 +59,7 @@ export function CodeBlockCombobox() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
-        <Command>
+        {/* <Command>
           <CommandInput placeholder="Search language..." />
           <CommandEmpty>No language found.</CommandEmpty>
 
@@ -83,7 +84,7 @@ export function CodeBlockCombobox() {
               </CommandItem>
             ))}
           </CommandList>
-        </Command>
+        </Command> */}
       </PopoverContent>
     </Popover>
   );

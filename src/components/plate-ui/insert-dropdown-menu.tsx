@@ -12,7 +12,7 @@ import {
   insertEmptyElement,
   useEditorRef,
 } from '@udecode/plate-common';
-import { ELEMENT_EXCALIDRAW } from '@udecode/plate-excalidraw';
+// import { ELEMENT_EXCALIDRAW } from '@udecode/plate-excalidraw';
 import {
   ELEMENT_H1,
   ELEMENT_H2,
@@ -22,10 +22,10 @@ import {
   ELEMENT_H6,
 } from '@udecode/plate-heading';
 import { ELEMENT_HR } from '@udecode/plate-horizontal-rule';
-import {
-  KEY_LIST_STYLE_TYPE,
-  toggleIndentList,
-} from '@udecode/plate-indent-list';
+// import {
+//   KEY_LIST_STYLE_TYPE,
+//   toggleIndentList,
+// } from '@udecode/plate-indent-list';
 import { ELEMENT_LINK, triggerFloatingLink } from '@udecode/plate-link';
 import { toggleList } from '@udecode/plate-list';
 import {
@@ -50,106 +50,106 @@ import { ToolbarButton } from '@/components/plate-ui/toolbar';
 
 const items = [
   {
-    label: 'Basic blocks',
+    label: '基础区块',
     items: [
       {
         value: ELEMENT_PARAGRAPH,
-        label: 'Paragraph',
-        description: 'Paragraph',
+        label: '正文',
+        description: '正文',
         icon: Icons.paragraph,
       },
       {
         value: ELEMENT_H1,
-        label: 'Heading 1',
-        description: 'Heading 1',
+        label: '一级标题',
+        description: '一级标题',
         icon: Icons.h1,
       },
       {
         value: ELEMENT_H2,
-        label: 'Heading 2',
-        description: 'Heading 2',
+        label: '二级标题',
+        description: '二级标题',
         icon: Icons.h2,
       },
       {
         value: ELEMENT_H3,
-        label: 'Heading 3',
-        description: 'Heading 3',
+        label: '三级标题',
+        description: '三级标题',
         icon: Icons.h3,
       },
       {
         value: ELEMENT_H4,
-        label: 'Heading 4',
-        description: 'Heading 4',
+        label: '四级标题',
+        description: '四级标题',
         icon: Icons.h4,
       },
       {
         value: ELEMENT_H5,
-        label: 'Heading 5',
-        description: 'Heading 5',
+        label: '五级标题',
+        description: '五级标题',
         icon: Icons.h5,
       },
       {
         value: ELEMENT_H6,
-        label: 'Heading 6',
-        description: 'Heading 6',
+        label: '六级标题',
+        description: '六级标题',
         icon: Icons.h6,
       },
       {
         value: ELEMENT_TABLE,
-        label: 'Table',
-        description: 'Table',
+        label: '表格',
+        description: '表格',
         icon: Icons.table,
       },
       {
         value: 'ul',
-        label: 'Bulleted list',
-        description: 'Bulleted list',
+        label: '无序列表',
+        description: '无序列表',
         icon: Icons.ul,
       },
       {
         value: 'ol',
-        label: 'Numbered list',
-        description: 'Numbered list',
+        label: '有序列表',
+        description: '有序列表',
         icon: Icons.ol,
       },
       {
         value: ELEMENT_BLOCKQUOTE,
-        label: 'Quote',
-        description: 'Quote (⌘+⇧+.)',
+        label: '引用',
+        description: '引用 (⌘+⇧+.)',
         icon: Icons.blockquote,
       },
       {
         value: ELEMENT_HR,
-        label: 'Divider',
-        description: 'Divider (---)',
+        label: '分割线',
+        description: '分割线 (---)',
         icon: Icons.hr,
       },
     ],
   },
   {
-    label: 'Media',
+    label: '高级区块',
     items: [
       {
         value: ELEMENT_CODE_BLOCK,
-        label: 'Code',
-        description: 'Code (```)',
+        label: '代码块',
+        description: '代码块 (```)',
         icon: Icons.codeblock,
       },
       {
         value: ELEMENT_IMAGE,
-        label: 'Image',
-        description: 'Image',
+        label: '图片',
+        description: '图片',
         icon: Icons.image,
       },
     ],
   },
   {
-    label: 'Inline',
+    label: '行内区块',
     items: [
       {
         value: ELEMENT_LINK,
-        label: 'Link',
-        description: 'Link',
+        label: '链接',
+        description: '链接',
         icon: Icons.link,
       },
     ],
@@ -163,7 +163,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert" isDropdown>
+        <ToolbarButton pressed={openState.open} tooltip="插入" isDropdown>
           <Icons.add />
         </ToolbarButton>
       </DropdownMenuTrigger>

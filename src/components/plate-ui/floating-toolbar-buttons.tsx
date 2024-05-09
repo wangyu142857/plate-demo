@@ -23,19 +23,16 @@ export function FloatingToolbarButtons() {
         <>
           <TurnIntoDropdownMenu />
 
-          <MarkToolbarButton nodeType={MARK_BOLD} tooltip="Bold (⌘+B)">
+          <MarkToolbarButton nodeType={MARK_BOLD} tooltip="粗体 (⌘+B)">
             <Icons.bold />
           </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_ITALIC} tooltip="Italic (⌘+I)">
+          <MarkToolbarButton nodeType={MARK_ITALIC} tooltip="斜体 (⌘+I)">
             <Icons.italic />
           </MarkToolbarButton>
-          <MarkToolbarButton
-            nodeType={MARK_UNDERLINE}
-            tooltip="Underline (⌘+U)"
-          >
+          <MarkToolbarButton nodeType={MARK_UNDERLINE} tooltip="下划线 (⌘+U)">
             <Icons.underline />
           </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_CODE} tooltip="Code (⌘+E)">
+          <MarkToolbarButton nodeType={MARK_CODE} tooltip="代码块 (⌘+E)">
             <Icons.code />
           </MarkToolbarButton>
 

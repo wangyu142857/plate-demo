@@ -1,6 +1,10 @@
 import React from 'react';
 import { DropdownMenuProps } from '@radix-ui/react-dropdown-menu';
-import { MARK_STRIKETHROUGH, MARK_SUBSCRIPT, MARK_SUPERSCRIPT } from '@udecode/plate-basic-marks';
+import {
+  MARK_STRIKETHROUGH,
+  MARK_SUBSCRIPT,
+  MARK_SUPERSCRIPT,
+} from '@udecode/plate-basic-marks';
 import { focusEditor, toggleMark, useEditorRef } from '@udecode/plate-common';
 
 import { Icons } from '@/components/icons';
@@ -21,7 +25,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert">
+        <ToolbarButton pressed={openState.open} tooltip="更多操作">
           <Icons.more />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -40,7 +44,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
           }}
         >
           <Icons.strikethrough className="mr-2 size-5" />
-          Strikethrough
+          删除线
           {/* (⌘+,) */}
         </DropdownMenuItem>
         <DropdownMenuItem
@@ -53,7 +57,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
           }}
         >
           <Icons.superscript className="mr-2 size-5" />
-          Superscript
+          上标
           {/* (⌘+,) */}
         </DropdownMenuItem>
         <DropdownMenuItem
@@ -66,10 +70,9 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
           }}
         >
           <Icons.subscript className="mr-2 size-5" />
-          Subscript
+          下标
           {/* (⌘+.) */}
         </DropdownMenuItem>
-
       </DropdownMenuContent>
     </DropdownMenu>
   );

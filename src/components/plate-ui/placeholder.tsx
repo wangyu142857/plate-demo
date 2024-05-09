@@ -6,7 +6,6 @@ import {
   PlaceholderProps,
   usePlaceholderState,
 } from '@udecode/plate-common';
-import { ELEMENT_H1 } from '@udecode/plate-heading';
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 
 export const Placeholder = (props: PlaceholderProps) => {

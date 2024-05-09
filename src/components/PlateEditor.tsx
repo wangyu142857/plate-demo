@@ -1,6 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { cn } from '@udecode/cn';
-import { Plate } from '@udecode/plate-common';
+import {
+  withHOC,
+  Plate,
+  PlateController,
+  usePlateActions,
+  useReplaceEditor,
+  Value,
+} from '@udecode/plate-common';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
@@ -18,9 +25,21 @@ import { FloatingToolbarButtons } from '@/components/plate-ui/floating-toolbar-b
 import { IEditorProps } from '@/type';
 import '../index.css';
 
-export function PlateEditor(props: IEditorProps) {
+export const PlateEditor = withHOC(PlateController, (props: IEditorProps) => {
   const containerRef = useRef(null);
-  const { initialValue, readOnly, onChange } = props;
+  const { value, id, initialValue, onChange, ...rest } = props;
+  const innerValueRef = useRef<Value | null>(null);
+  const setValue = usePlateActions(id).value();
+  const replaceEditor = useReplaceEditor();
+  useEffect(() => {
+    if (
+      value &&
+      JSON.stringify(value) !== JSON.stringify(innerValueRef.current)
+    ) {
+      replaceEditor();
+      setValue(value);
+    }
+  }, [value]);
 
   return (
     <TooltipProvider
@@ -30,9 +49,17 @@ export function PlateEditor(props: IEditorProps) {
     >
       <DndProvider backend={HTML5Backend}>
         {/* <CommentsProvider users={commentsUsers} myUserId={myUserId}> */}
-        <Plate plugins={plugins} initialValue={initialValue} onChange={(val) => {
-          onChange && onChange(val)
-        }}>
+        <Plate
+          plugins={plugins}
+          initialValue={initialValue}
+          onChange={(val) => {
+            if (JSON.stringify(value) === JSON.stringify(val)) {
+              return;
+            }
+            innerValueRef.current = val;
+            onChange && onChange(val);
+          }}
+        >
           <div
             ref={containerRef}
             className={cn(
@@ -42,26 +69,28 @@ export function PlateEditor(props: IEditorProps) {
               '[&_.slate-start-area-left]:!w-3 [&_.slate-start-area-right]:!w-3 [&_.slate-start-area-top]:!h-4'
             )}
           >
-            <div className={`${readOnly ? 'toolbar-readOnly' : ''}`}>
-              <FixedToolbar>
-                <FixedToolbarButtons />
-              </FixedToolbar>
-            </div>
+            {!rest?.readOnly ? (
+              <div
+                className={`${rest?.disabledToolbar ? 'toolbar-readOnly' : ''}`}
+              >
+                <FixedToolbar className="fixed-toolbar">
+                  <FixedToolbarButtons />
+                </FixedToolbar>
+              </div>
+            ) : null}
 
             <Editor
               autoFocus
               focusRing={false}
               variant="ghost"
               size="md"
-              className={cn(
-                'px-8',
-                // 'px-[96px]',
-              )}
+              {...rest}
             />
-
-            <FloatingToolbar>
-              <FloatingToolbarButtons />
-            </FloatingToolbar>
+            {!rest?.readOnly ? (
+              <FloatingToolbar className="float-toolbar">
+                <FloatingToolbarButtons />
+              </FloatingToolbar>
+            ) : null}
 
             {/* <MentionCombobox items={MENTIONABLES} /> */}
 
@@ -74,4 +103,4 @@ export function PlateEditor(props: IEditorProps) {
       </DndProvider>
     </TooltipProvider>
   );
-}
+});

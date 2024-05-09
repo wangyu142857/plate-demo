@@ -4,7 +4,7 @@ import {
   MARK_ITALIC,
   MARK_UNDERLINE,
 } from '@udecode/plate-basic-marks';
-
+// import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
 import { useEditorReadOnly } from '@udecode/plate-common';
 import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font';
 import { ListStyleType } from '@udecode/plate-indent-list';
@@ -50,14 +50,14 @@ export function FixedToolbarButtons() {
             </ToolbarGroup>
 
             <ToolbarGroup>
-              <MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
+              <MarkToolbarButton tooltip="粗体 (⌘+B)" nodeType={MARK_BOLD}>
                 <Icons.bold />
               </MarkToolbarButton>
-              <MarkToolbarButton tooltip="Italic (⌘+I)" nodeType={MARK_ITALIC}>
+              <MarkToolbarButton tooltip="斜体 (⌘+I)" nodeType={MARK_ITALIC}>
                 <Icons.italic />
               </MarkToolbarButton>
               <MarkToolbarButton
-                tooltip="Underline (⌘+U)"
+                tooltip="下划线 (⌘+U)"
                 nodeType={MARK_UNDERLINE}
               >
                 <Icons.underline />
@@ -69,13 +69,10 @@ export function FixedToolbarButtons() {
             </ToolbarGroup>
 
             <ToolbarGroup>
-              <ColorDropdownMenu nodeType={MARK_COLOR} tooltip="Text Color">
+              <ColorDropdownMenu nodeType={MARK_COLOR} tooltip="文字颜色">
                 <Icons.color className={iconVariants({ variant: 'toolbar' })} />
               </ColorDropdownMenu>
-              <ColorDropdownMenu
-                nodeType={MARK_BG_COLOR}
-                tooltip="Highlight Color"
-              >
+              <ColorDropdownMenu nodeType={MARK_BG_COLOR} tooltip="背景色">
                 <Icons.bg className={iconVariants({ variant: 'toolbar' })} />
               </ColorDropdownMenu>
             </ToolbarGroup>
